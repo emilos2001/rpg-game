@@ -1,3 +1,4 @@
+//GAMEPANEL CLASS
 package Totorial.RPG;
 
 import Totorial.RPG.Entity.Entity;
