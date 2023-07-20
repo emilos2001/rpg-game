@@ -1,4 +1,4 @@
-//SUPER OBJECTS
+//SUPER OBJECTS CLASS
 package Totorial.RPG.Obj;
 
 import Totorial.RPG.GamePanel;
@@ -33,7 +33,7 @@ public class SupObject {
         g2d.drawImage(image, screenX, screenY, gp.size, gp.size, null);
     }
 }
-//CALCOBJ
+//CALCOBJ CLASS
 package Totorial.RPG.Obj;
 
 import Totorial.RPG.GamePanel;
@@ -55,7 +55,7 @@ public class CalcObj extends SupObject {
         }
     }
 }
-//CHEST
+//CHEST 
 package Totorial.RPG.Obj;
 
 import Totorial.RPG.GamePanel;
@@ -91,4 +91,209 @@ public class Chest extends SupObject {
         g2d.drawImage(image, screenX, screenY, gp.size, gp.size, null);
     }
 }
-//
+//COIN
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class Coin extends SupObject{
+
+    public Coin(GamePanel gp) {
+        super(gp);
+        name = "DINCOIN";
+        try {
+            //icon on map
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("coin_bronze.png")));
+            //icon in inventory
+            coin = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("coin_bronze.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+//MANACOIN
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class Mana extends SupObject{
+    public Mana(GamePanel gp) {
+        super(gp);
+        try {
+            manaCoin = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("manacrystal.png")));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+//DIAMOND
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class Diamond extends SupObject{
+
+    public Diamond(GamePanel gp){
+        super(gp);
+        name = "DIAMOND";
+        try{
+            //icon on map
+            diamond = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("blueheart.png")));
+            //icon in inventory
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("blueheart.png")));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+//DOOR
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class Door extends SupObject{
+    public Door(GamePanel gp) {
+        super(gp);
+        name = "DOOR";
+        try {
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("door.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+//IRON-DOOR 
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class IronDoor extends SupObject {
+    public IronDoor(GamePanel gp) {
+        super(gp);
+        name = "IRON-DOOR";
+        try {
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("door_iron.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+//LANTERN
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class Lantern extends SupObject {
+    public Lantern(GamePanel gp) {
+        super(gp);
+        name = "LANTERN";
+        try {
+            //icon on map
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("lantern.png")));
+            //icon in inventory
+            lantern = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("lantern.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+//HOUSE 
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class House extends SupObject{
+
+    public House(GamePanel gp){
+        super(gp);
+        name = "HOUSE";
+        try{
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("house.png")));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class KeyObj extends SupObject {
+    public KeyObj(GamePanel gp) {
+        super(gp);
+        name = "KEY";
+        try {
+            //icon on map
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("key.png")));
+            //icon in inventory
+            key = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("key.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+// STAIRS
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class Stairs extends SupObject{
+    public Stairs(GamePanel gp) {
+        super(gp);
+        name = "STAIRS";
+        try {
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("stairs.png")));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+//KEYOBJ
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class KeyObj extends SupObject {
+    public KeyObj(GamePanel gp) {
+        super(gp);
+        name = "KEY";
+        try {
+            //icon on map
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("key.png")));
+            //icon in inventory
+            key = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("key.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
