@@ -1,0 +1,94 @@
+//SUPER OBJECTS
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+public class SupObject {
+    public BufferedImage image;
+    public BufferedImage key;
+    public BufferedImage calculator;
+    public BufferedImage diamond;
+    public BufferedImage lantern;
+    public BufferedImage coin;
+    public BufferedImage manaCoin;
+    public BufferedImage chest;
+    GamePanel gp;
+
+    public SupObject(GamePanel gp) {
+        this.gp = gp;
+    }
+
+    public Rectangle solid = new Rectangle(4, 16, 40, 32);
+    public int solidDefaultX, solidDefaultY;
+    public int worldX;
+    public int worldY;
+    public String name;
+
+    public void draw(Graphics2D g2d, GamePanel gp) {
+        int screenX = worldX - gp.player.worldX + gp.player.screenX;
+        int screenY = worldY - gp.player.worldY + gp.player.screenY;
+        g2d.drawImage(image, screenX, screenY, gp.size, gp.size, null);
+    }
+}
+//CALCOBJ
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.util.Objects;
+
+public class CalcObj extends SupObject {
+    public CalcObj(GamePanel gp) {
+       super(gp);
+        name = "CALCULATOR";
+        try {
+            //icon on map
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("calculator.png")));
+            //icon in inventory
+            calculator = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("calculator.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+//CHEST
+package Totorial.RPG.Obj;
+
+import Totorial.RPG.GamePanel;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.util.Objects;
+
+
+public class Chest extends SupObject {
+    GamePanel gp;
+
+
+    public Chest(GamePanel gp) {
+        super(gp);
+        this.gp = gp;
+        name = "CHEST";
+        getChestImages();
+    }
+
+    public void getChestImages() {
+        try {
+            chest = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("chest.png")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void draw(Graphics2D g2d, GamePanel gp) {
+        image = chest;
+        int screenX = worldX - gp.player.worldX + gp.player.screenX;
+        int screenY = worldY - gp.player.worldY + gp.player.screenY;
+        g2d.drawImage(image, screenX, screenY, gp.size, gp.size, null);
+    }
+}
+//
