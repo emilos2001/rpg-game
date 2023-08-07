@@ -1050,12 +1050,14 @@ public class UI {
         }
         if (gp.state == gp.dialogueStateWithMerchant) {
             dialogueScreenWithMerchant();
+            progressBar(g2d, currentProgress);
         }
         if (gp.state == gp.inventoryState) {
             inventory();
         }
         if (gp.state == gp.information) {
             information();
+            progressBar(g2d, currentProgress);
         }
         if (gp.state == gp.dialogueScreen) {
             dialoguesScreen();
@@ -1190,6 +1192,21 @@ public class UI {
         }
     }
 
+    public void progressBar(Graphics2D g2d, double progress) {
+        int x = 10;
+        int y = 10;
+        int width = (int) ((gp.screenWidth - 50) * progress);
+        int height = 50;
+        g2d.setColor(new Color(0, 26, 0, 190));
+        g2d.fillRoundRect(x, y, gp.screenWidth - 50, height, 25, 25);
+        g2d.setColor(new Color(0, 0, 0, 170));
+        g2d.fillRoundRect(x + 5, y + 5, gp.screenWidth - 60, height - 10, 30, 30);
+        g2d.setColor(new Color(0, 255, 0));
+        g2d.fillRoundRect(x + 5, y + 5, width - 10, height - 10, 30, 30);
+        g2d.setFont(new Font("MV Boli", Font.BOLD, 25));
+        g2d.setColor(Color.white);
+        g2d.drawString(String.format("%.1f%%", progress * 100), (gp.screenWidth - 60) / 2, 45);
+    }
 
     public void information() {
         int x = 400;
