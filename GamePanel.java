@@ -40,6 +40,7 @@ public class GamePanel extends JPanel implements Runnable {
     public Manager manager = new Manager(this);
     public Keys keys = new Keys(this);
     public Thread gameThread;
+    public MenuUI menu = new MenuUI(this);
     public Player player = new Player(this, keys);
     public Entity[][] entities;
     public SupObject[][] supObject;
@@ -96,7 +97,9 @@ public class GamePanel extends JPanel implements Runnable {
             timer += (currentTime - lastTime);
             lastTime = currentTime;
             if (delta >= 1) {
+               // if (keys.joinButtonClicked) {
                 update();
+                //}
                 repaint();
                 delta--;
                 count++;
@@ -137,6 +140,12 @@ public class GamePanel extends JPanel implements Runnable {
             }
         }
         player.draw(g2);
+        menu.isMenu = false;
+       /* if (keys.joinButtonClicked) {
+            menu.isMenu = false;
+            keys.join = false;
+            player.draw(g2);
+        }*/
         ui.draw(g2);
     }
 }
