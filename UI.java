@@ -108,7 +108,7 @@ public class UI {
         g2d.drawImage(dinCoin, 695, 100, 30, 30, null);
         g2d.drawString("X:" + gp.player.coin, 720, 120);
         String typeOfAnswers = "MULTIPLE ANSWERS";
-        g2d.drawString(typeOfAnswers, 565, 790);
+        //g2d.drawString(typeOfAnswers, 565, 790);
         nextLineText(currentDialogue, x, y, 700);
         if (spriteNum == 1) {
             g2d.drawImage(dinoLeftUpRight, 310, 750, 50, 50, null);
@@ -184,7 +184,7 @@ public class UI {
         g2d.drawString(sb.toString(), x, y);
     }
 
-    private void correctAnswers() {
+  /*  private void correctAnswers() {
         if (keys.verify) {
             g2d.setColor(new Color(0, 255, 0));
             g2d.setStroke(new BasicStroke(3));
@@ -202,7 +202,7 @@ public class UI {
     }
 
 
-    /*  private void wrongAnswers() {
+      private void wrongAnswers() {
           if (keys.verify) {
               g2d.setColor(new Color(255, 0, 0));
               g2d.setStroke(new BasicStroke(3));
