@@ -10,16 +10,15 @@ public class AssetSetter {
     public AssetSetter(GamePanel gp) {
         this.gp = gp;
     }
-    public void setObj() {
-        gp.supObject[gp.exteriorMap][0] = new KeyObj(gp);
-        gp.supObject[gp.exteriorMap][0].worldX = 478;
-        gp.supObject[gp.exteriorMap][0].worldY = 144;
-        gp.supObject[gp.exteriorMap][1] = new CalcObj(gp);
-        gp.supObject[gp.exteriorMap][1].worldX = 283;
-        gp.supObject[gp.exteriorMap][1].worldY = 1492;
-        gp.supObject[gp.exteriorMap][2] = new Diamond(gp);
-        gp.supObject[gp.exteriorMap][2].worldX = 1935;
-        gp.supObject[gp.exteriorMap][2].worldY = 315;
+    public void setIronDoor(){
+        gp.supObject[gp.exteriorMap][13] = new IronDoor(gp);
+        gp.supObject[gp.exteriorMap][13].worldX = 2015;
+        gp.supObject[gp.exteriorMap][13].worldY = 424;
+        gp.supObject[gp.castleMap][14] = new Stairs(gp);
+        gp.supObject[gp.castleMap][14].worldX = 530;
+        gp.supObject[gp.castleMap][14].worldY = 189;
+    }
+    public void setHouses(){
         gp.supObject[gp.exteriorMap][3] = new House(gp);
         gp.supObject[gp.exteriorMap][3].worldX = 774;
         gp.supObject[gp.exteriorMap][3].worldY = 143;
@@ -50,15 +49,20 @@ public class AssetSetter {
         gp.supObject[gp.houseMap][12] = new Door(gp);
         gp.supObject[gp.houseMap][12].worldX = 1250;
         gp.supObject[gp.houseMap][12].worldY = 815;
+    }
+    public void setObj() {
+        gp.supObject[gp.exteriorMap][0] = new KeyObj(gp);
+        gp.supObject[gp.exteriorMap][0].worldX = 478;
+        gp.supObject[gp.exteriorMap][0].worldY = 144;
+        gp.supObject[gp.exteriorMap][1] = new CalcObj(gp);
+        gp.supObject[gp.exteriorMap][1].worldX = 283;
+        gp.supObject[gp.exteriorMap][1].worldY = 1492;
+        gp.supObject[gp.exteriorMap][2] = new Diamond(gp);
+        gp.supObject[gp.exteriorMap][2].worldX = 1935;
+        gp.supObject[gp.exteriorMap][2].worldY = 315;
         gp.supObject[gp.houseMap][13] = new Chest(gp);
         gp.supObject[gp.houseMap][13].worldX = 1258;
         gp.supObject[gp.houseMap][13].worldY = 344;
-        gp.supObject[gp.exteriorMap][13] = new IronDoor(gp);
-        gp.supObject[gp.exteriorMap][13].worldX = 2015;
-        gp.supObject[gp.exteriorMap][13].worldY = 424;
-        gp.supObject[gp.castleMap][14] = new Stairs(gp);
-        gp.supObject[gp.castleMap][14].worldX = 530;
-        gp.supObject[gp.castleMap][14].worldY = 189;
         gp.supObject[gp.castleMap][15] = new KeyObj(gp);
         gp.supObject[gp.castleMap][15].worldX = 550;
         gp.supObject[gp.castleMap][15].worldY = 436;
@@ -153,6 +157,7 @@ public class AssetSetter {
         gp.supObject[gp.castleMap][45].worldX = 998;
         gp.supObject[gp.castleMap][45].worldY = 1820;
     }
+
     public void setNpc() {
         //villagers
         gp.entities[gp.exteriorMap][0] = new Villager(gp);
@@ -179,6 +184,9 @@ public class AssetSetter {
         gp.entities[gp.castleMap][7] = new Villager(gp);
         gp.entities[gp.castleMap][7].worldX = 1502;
         gp.entities[gp.castleMap][7].worldY = 753;
+        gp.entities[gp.exteriorMap][14] = new Villager(gp);
+        gp.entities[gp.exteriorMap][14].worldX = 998;
+        gp.entities[gp.exteriorMap][14].worldY = 1916;
         //merchant1
         gp.entities[gp.exteriorMap][8] = new Merchant(gp);
         gp.entities[gp.exteriorMap][8].worldX = 1255;
