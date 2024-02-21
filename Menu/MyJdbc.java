@@ -14,7 +14,7 @@ public class MyJdbc {
 
     public MyJdbc() {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rpg_users", "root", "root");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/rpg_users", "****", "****");
             statement = connection.createStatement();
         } catch (Exception e) {
             e.printStackTrace();
