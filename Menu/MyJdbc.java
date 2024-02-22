@@ -1,4 +1,4 @@
-package Totorial.RPG.Menu;
+тоpackage Totorial.RPG.Menu;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -192,9 +192,9 @@ public class MyJdbc {
         }
     }
 
-    public boolean typeOfAnswers() {
+    /*public boolean typeOfAnswers() {
         return false;
-    }
+    }*/
 
     public boolean isEmpty() {
         boolean isEmpty = false;
